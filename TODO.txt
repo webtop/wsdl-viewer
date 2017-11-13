@@ -7,3 +7,5 @@ TODO
 - Figure out what's going on with operation Faults
 
 - Pull in base properties for extended complex types?
+
+- Add a "bake" option to export the WSDL as HTML (maintaining the design?)

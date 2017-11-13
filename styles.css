@@ -1,40 +1,28 @@
-body,
-input,
-textarea,
-select
-{
+body, input, textarea, select {
 	font: 400 100%/1.5 'Open Sans', sans-serif;
 }
 
-
-html,
-body
-{
+html, body {
 	margin: 0;
 	padding: 0;
-
 }
 
-body
-{
+body {
 	cursor: default;
 	overflow-y: scroll;
 }
 
-header
-{
-	background: #eee;
-	border-bottom: 1px solid #ccc;
+header {
+	background: #333 url(inseego-logo.png) no-repeat 1% 50%;
+	border-bottom: 1px solid #0000ff;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 65px;
 }
 
-header h1
-{
-	margin: 0;
-	padding: 5px 15px;
-}
-
-footer
-{
+footer {
 	display: none;
 	position: fixed;
 	bottom: 0;
@@ -43,159 +31,207 @@ footer
 	border-left: 1px solid #ccc;
 	border-top: 1px solid #ccc;
 }
-footer a
-{
-	display: inline-block;
-	padding: 10px;
+
+#container {
+	position: absolute;
+	top: 60px !important;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
 
-
-#output
-{
+#output {
+	position: relative;
 	margin: 25px 45px 14px 25px;
 }
 
-#toc section
-{
+#toc section {
 	display: inline-block;
 	margin-right: 2em;
 	vertical-align: top;
 }
 
-.empty
-{
+.empty {
 	font-style: italic;
 }
 
-.info
-{
+.info span.hlite {
+	color: #0082CB;
+	font-weight: bold;
 }
-.info span
-{
-	font-weight: 600;
-}
-.error
-{
+
+.error {
 	color: #900;
 }
 
-div.thing
-{
+div.thing {
 	display: inline-block;
 	vertical-align: top;
 	margin-top: 2em;
 	margin-right: 2em;
 }
 
-
-a
-{
+a {
 	text-decoration: none;
 }
-h1 a,
-h2 a,
-h3 a,
-h4 a
-{
+
+h1 a, h2 a, h3 a, h4 a {
 	color: inherit;
 }
 
-
-
-table
-{
+table {
 	margin-top: 1em;
 	border-collapse: collapse;
 	font-size: .8em;
 }
-td,
-th
-{
+
+td, th {
 	border: 1px solid #ccc;
 	padding: .5em 1em;
 	vertical-align: top;
 	text-align: left;
 }
-th
-{
+
+th {
 	font-weight: 600;
 	background-color: #eee;
 	white-space: nowrap;
 }
-thead th
-{
+
+thead th {
 	text-align: center;
 	font-size: small;
 }
 
-
-
-h1,
-h2,
-h3
-{
+h1, h2, h3 {
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-weight: 300;
 	margin-top: 2em;
 	margin-bottom: .5em;
-
-	transition : border-top-color 500ms ease-out; 
-	-webkit-transition : border-top-color 500ms ease-out; 
-	-moz-transition : border-top-color 500ms ease-out;
-	-o-transition : border-top-color 500ms ease-out; 
+	transition: border-top-color 500ms ease-out;
+	-webkit-transition: border-top-color 500ms ease-out;
+	-moz-transition: border-top-color 500ms ease-out;
+	-o-transition: border-top-color 500ms ease-out;
 }
-h1+*,
-h2+*,
-h3+*
-{
+
+h1 + *, h2 + *, h3 + * {
 	margin-top: 0;
 }
 
-h1
-{
-	font-size: 4em;
+h1 {
+	font-size: 2em;
 }
-h2
-{
-	font-size: 3em;
-	border-top: 5px solid #fc9;
+
+h2 {
+	font-size: 1.2em;
+	border-top: 5px solid #99beff;
 }
-h3
-{
+
+h3 {
 	margin-top: .5em;
 	margin-bottom: 0;
 	font-size: 2em;
-	border-top: 5px solid #fdb;
+	border-top: 5px solid #bad8ff;
 }
 
-.target h2,
-.target h3
-{
-	border-top-color: #f90; 
+.target h2,.target h3 {
+	border-top-color: #0082cb;
 }
 
-dt
-{
+dt {
 	font-size: 1.2em;
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-weight: 300;
 }
-dd
-{
+
+dd {
 	margin-left: 2em;
 }
-dd:before
-{
-	content: "·";
+
+dd:before {
+	content: " -";
 	padding-right: .5em;
 	color: #777;
 }
 
-
-
-.schema
-{
+.schema {
 	font-size: x-small;
 	margin-top: -.5em;
 	color: #aaa;
+}
+
+header {
+	z-index: 99;
+}
+
+header h1 {
+	display: inline;
+	max-width: 15%;
+}
+
+header div.action_bar {
+	position: fixed;
+	top: 0;
+	right: 180px;
+}
+
+div#submit_btn, div#home_btn {
+	position: fixed;
+	top: 12px;
+	color: #fff;
+	background: #0082cb;
+	padding: 6px 12px;
+	border: 1px solid #000;
+	border-radius: 4px;
+}
+
+div#submit_btn {
+	right: 95px;
+}
+
+div#home_btn {
+	right: 12px;
+}
+
+div#submit_btn:hover, div#home_btn:hover {
+	background: #ff9900;
+	border: 1px solid #000;
+	color: #0082cb;
+	background: #fff;
+}
+
+div#submit_btn button, div#home_btn button {
+	background: transparent;
+	border: 0;
+	width: 55px;
+	font-weight: bold;
+}
+
+header h1 {
+	margin: 0 0 0 230px;
+}
+
+footer a {
+	display: inline-block;
+	padding: 10px;
+}
+
+.text-white {
+	color: #fff !important;
+}
+
+div#load_spinner {
+	background-image: url(spinner.png);
+	display: none;
+	width: 150px;
+	height: 150px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 99;
+}
+
+img#top-image:hover {
+	color: #0082cb;
+	fill: #0082cb;
 }
